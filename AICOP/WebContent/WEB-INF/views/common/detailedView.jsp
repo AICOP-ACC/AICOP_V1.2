@@ -252,7 +252,7 @@
 		                <small>Business Remediation</small>
 		              </h3>
 		              <div class="card card-nav-tabs">
-		                <div class="card-header card-header-primary">
+		                <div class="card-header card-header-primary_custom">
 		                  <!-- colors: "header-primary", "header-info", "header-success", "header-warning", "header-danger" -->
 		                  <div class="nav-tabs-navigation">
 		                    <div class="nav-tabs-wrapper">
@@ -356,7 +356,6 @@
 		                  </div>
 		                </div>
 		              </div>
-		              End Tabs with icons on Card
 				</div>
  <!--    End of CMDB Tabs	 -->
 
