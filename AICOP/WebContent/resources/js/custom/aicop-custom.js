@@ -21,19 +21,126 @@ $('.aicop-collapse').on("click",function(){
 	}
 })
 
+/**Soundariya : AutoConferencing Start**/
+
+$("#popUpNotes").on("click",function(){
+	console.log("Btn clciked.....");
+	$('#popUpModal').modal('show');
+})
+
+//Initiate Conference
 $('#confInit').on('click',function(){
 	console.log("On click confInit");
+	$('#confTerminate').removeClass("invisible");
+	$('#shareBridge').removeClass("invisible");
+	$('#confInit').prop('disabled',true);
+	$.ajax({
+			  "async": true,
+			  "crossDomain": true,
+			  "url": "https://dh.aiam.accenture.com/optusams-node/conference",
+			  "method": "POST",
+			  "headers": {
+				"content-type": "application/x-www-form-urlencoded",
+				"cache-control": "no-cache"   
+			  },
+			  "data": {
+				"appName":"OPOM",
+				"moderator": "+919994946535",
+				"telNos": "+919840272090"
+			  },
+			  success:function(response){
+				  console.log("Call made..");
+			  }
+			});
 })
+
+//Terminate Conference
 $('#confTerminate').on('click',function(){
 	console.log("On click confTerminate");
+	$('#confTerminate').addClass("invisible");
+	$('#shareBridge').addClass("invisible");
+	$('#confInit').prop('disabled',false);
+	$.ajax({
+			  "async": true,
+			  "crossDomain": true,
+			  "url": "https://dh.aiam.accenture.com/optusams-node/terminateCall", 
+			  "method": "POST",
+				  success:function(response){
+					  console.log("Call teminated..");
+				  }
+			});
+	//TODO
+	/*var terminatedMsg = "Call has been terminated. Recordings of the call can be found in \"https://dh.aiam.accenture.com/optusams-node/terminateCall/Recordings\"";
+	var dt = new Date();
+	var utcDate = dt.toUTCString();
+	$('#notesTxtId').append("\n"+utcDate+" : "+terminatedMsg);*/
 })
+
+//Share Bridge Details
 $('#shareBridge').on('click',function(){
 	console.log("On click shareBridge");
+	$('#popUpModalEmail').modal('show');
+	$('#emailModalLabeId').text("Share Bridge Details");
 })
 
 $('#notesIcon').on('click',function(){
 	console.log("On click notesIcon");
 })
+
+
+
+$('#addNewNumber').on('click',function(){
+		$('#errorMsg').text("");
+		console.log("New number added");
+		var countryCode = $('#countryCode').val();
+		var newNumToAdd = $('#newPhNum').val();
+		//Validations for new number
+		//India number
+		if(countryCode=="+91" && newNumToAdd.length != 10){
+			console.log("India number");
+			$('#errorModal').modal('show');
+			$('#dynamicErrorMsg').html("Phone number must be 10 digit!");
+			}
+		
+		//Singapore number
+		else if(countryCode=="+65" && newNumToAdd.length != 8){
+			console.log("Singapore Code");
+			$('#errorModal').modal('show');
+			$('#dynamicErrorMsg').html("Phone number must be 8 digit!");
+			}
+		
+		//Australia number
+		else if(countryCode=="+61" && newNumToAdd.length != 9){
+			console.log("Australia Code");
+			$('#errorModal').modal('show');
+			$('#dynamicErrorMsg').html("Phone number must be 9 digit!");
+			}
+		
+		//Validation Passed
+		else{
+			console.log("Validation passed");
+			
+			
+			var conferenceContactsTable = $('#memDetTable').DataTable({
+				"aoColumnDefs" : [
+					{ "sClass":"text-right", "aTargets":[4]},
+					{ "sClass":"td-actions text-right", "aTargets":[5]}
+					
+				]
+			})
+			
+			conferenceContactsTable.row.add( [
+	            'NA',
+	            'Guest',
+	            'NA',
+	            'NA',
+	            countryCode+newNumToAdd,
+	            '<button type="button" rel="tooltip" class="btn btn-danger" data-original-title="" title=""><i class="material-icons">close</i></button>'
+	        ] ).draw( false );
+			conferenceContactsTable.order([1, 'desc']).draw();
+		}
+	})
+/**Soundariya : AutoConferencing End**/
 
 $('#impactedAppl').on('click',function(){
 	console.log("On select");

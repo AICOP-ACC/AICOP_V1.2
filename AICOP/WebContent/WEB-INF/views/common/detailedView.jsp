@@ -1,4 +1,4 @@
-<script src="resources/js/custom/aicop-custom.js"></script>
+<!-- <script src="resources/js/custom/aicop-custom.js"></script> -->
 <!-- page content -->
 
 <!-- Test Start -->
@@ -86,6 +86,7 @@
 			          Auto Conferencing
 			          <i class="material-icons">keyboard_arrow_down</i>
 			        </a>
+			        
 			      </h5>
 			    </div>
 			    <div id="collapseTwo" class="collapse" role="tabpanel" aria-labelledby="headingTwo" data-parent="#accordion">
@@ -96,13 +97,123 @@
             <i class="material-icons">assignment</i>
           </div>
           <h4 class="card-title">Stake Holders</h4>
-        </div>
+          
+          <h4 class="text-info aicop-padding-top-10">Major Incident : 1801040252
+     	 </h4>
+          <div>
+          <i id="confInit" class="fa fa-phone-square icon-green icon-large mouse-point icon-embossed"></i>
+		 <i id="confTerminate" class="fa fa-phone-square icon-red icon-large mouse-point icon-embossed invisible aicop-padding-left-10"></i>
+		 <i id="shareBridge" class="fa fa-share-alt-square icon-blue icon-large mouse-point icon-embossed invisible aicop-padding-left-20" data-toggle="modal"></i>
+		 <button class="btn btn-info btn-round pull-right" data-toggle="modal" data-target="#myModal">
+                Notes
+              <div class="ripple-container"></div></button>
+
+		 </div>
+    </div>
+        <!-- Notes Modal Starts-->
+        <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+                <div class="modal-dialog">
+                  <div class="modal-content">
+                    <div class="modal-header">
+                      <h4 class="modal-title">Notes</h4>
+                      <button type="button" class="close" data-dismiss="modal" aria-hidden="true">
+                        <i class="material-icons">clear</i>
+                      </button>
+                    </div>
+                    <div class="modal-body">
+                    <p id="notesContent">Notes for Major - 1801040331
+                      </p>
+	                     <div class="swal2-content" style="display: block;">
+		                     <div class="form-group bmd-form-group"><input id="input-field" placeholder="Type here..." type="text" class="form-control">
+		                     </div>
+	                     </div>
+                    </div>
+                    <div class="modal-footer">
+                      
+                      <button type="button" class="btn btn-danger btn-link" data-dismiss="modal">Close
+	                      <div class="ripple-container">
+		                      <div class="ripple-decorator ripple-on ripple-out" style="left: 15.0781px; top: 16px; background-color: rgb(244, 67, 54); transform: scale(8.50976);">
+		                      </div>
+	                      </div>
+                      </button>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            <!-- Notes Modal Ends -->  
+            
+            <!-- Share Bridge Details Modal Starts -->
+            <div class="modal fade" id="popUpModalEmail" tabindex="-1" role="dialog" aria-labelledby="popUpModalEmailLabel">
+                <div class="modal-dialog">
+                  <div class="modal-content">
+                    <div class="modal-header">
+                      <h4 class="modal-title" id="emailModalLabeId"></h4>
+                      <button type="button" class="close" data-dismiss="modal" aria-hidden="true">
+                        <i class="material-icons">clear</i>
+                      </button>
+                    </div>
+                    <div class="modal-body">
+                    <form action="#">
+                      <div class="form-group">
+                      			
+							      <!-- <label for="toEmail">To:</label> -->
+							      <input type="email" class="form-control" id="toEmail" placeholder="To:" name="toEmail">
+							    </div>
+							    <div class="form-group">
+							      <!-- <label for="ccEmail">Cc:</label> -->
+							      <input type="email" class="form-control" id="ccEmail" placeholder="Cc:" name="ccEmail">
+							    </div>
+							  	<div class="form-group">
+							      <!-- <label for="subject">Subject:</label> -->
+							      <input type="text" class="form-control" id="subject" placeholder="Subject:" name="subject">
+							    </div>
+							    <div class="form-group">
+							      <textarea id="mailContent" placeholder="Type content here..." class="form-control"></textarea>
+							      
+							    </div>
+							   
+							  </form>
+                    </div>
+                    <div class="modal-footer">
+                      
+                      
+	                      <button id="sendMail" type="button" class="btn btn-success btn-round">Send</button>
+                      
+                    </div>
+                  </div>
+                </div>
+              </div>
+             <!-- Share Bridge Details Modal Ends -->
+             
+             <!-- Error Modal Starts -->
+             <div class="modal fade modal-mini modal-primary" id="errorModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+                <div class="modal-dialog modal-small">
+                  <div class="modal-content">
+                    <div class="modal-header">
+                    <h4 class="modal-title">Error!</h4>
+                      <button type="button" class="close" data-dismiss="modal" aria-hidden="true"><i class="material-icons">clear</i></button>
+                    </div>
+                    <div class="modal-body">
+                      <p id="dynamicErrorMsg" class="text-danger"></p>
+                    </div>
+                    <div class="modal-footer justify-content-center">
+                      <button type="button" class="btn btn-info" data-dismiss="modal">Ok</button>
+                     
+                    </div>
+                  </div>
+                </div>
+              </div>
+             <!-- Error Modal Ends -->
+              
+              
+              
+              
         <div class="card-body">
           <div class="table-responsive">
-            <table class="table">
+            <table id="memDetTable" class="table">
               <thead>
                 <tr>
-                  <th class="text-center">#</th>
+                  <!-- <th class="text-center">#</th> -->
                   <th>Application</th>
                   <th>Contact</th>
                   <th>Designation</th>
@@ -113,7 +224,7 @@
               </thead>
               <tbody>
                 <tr>
-                  <td class="text-center">1</td>
+                  <!-- <td class="text-center">1</td> -->
                   <td>CC</td>
                   <td>Srinivasan Sadagopan</td>
                   <td>Duty Manager</td>
@@ -126,7 +237,7 @@
                   </td>
                 </tr>
                 <tr>
-                  <td class="text-center">2</td>
+                  <!-- <td class="text-center">2</td> -->
                   <td>POPI</td>
                   <td>Vinoth G</td>
                   <td>Team Lead</td>
@@ -139,7 +250,7 @@
                   </td>
                 </tr>
                 <tr>
-                  <td class="text-center">3</td>
+                  <!-- <td class="text-center">3</td> -->
                    <td>MTS</td>
                   <td>Partha</td>
                   <td>SME</td>
@@ -152,7 +263,7 @@
                   </td>
                 </tr>
                 <tr>
-                  <td class="text-center">4</td>
+                  <!-- <td class="text-center">4</td> -->
                    <td>OPOM</td>
                   <td>Sampath</td>
                   <td>Support Analyst</td>
@@ -165,7 +276,7 @@
                   </td>
                 </tr>
                 <tr>
-                  <td class="text-center">5</td>
+                  <!-- <td class="text-center">5</td> -->
                    <td>NA</td>
                   <td>Guest</td>
                   <td>NA</td>
@@ -180,6 +291,25 @@
               </tbody>
             </table>
           </div>
+         
+          <div class="row">
+		 	
+		 		<label class="col-md-2 aicop-padding-left-20 text-info">Add Number </label>
+		 		<div class="col-md-2">
+			 		<select id="countryCode" class="form-control pull-left">
+				 		<option>-Select Country Code-</option>
+				 		<option>+91</option>
+				 		<option>+65</option>
+				 		<option>+61</option>
+			 		</select>
+		 		</div>
+		 		<div class="col-md-3"><input id="newPhNum" placeholder="Enter ph no..." class="form-control pull-left" type="number"> </div>
+		 		
+		 		<div class="col-md-1"><button id="addNewNumber" class="btn btn-primary btn-round">Add</button></div>
+		 	
+		 	<div class="col-md-3" id="errorMsg" class="form-group text-danger"></div>
+		 </div>
+		 
         </div>
       </div>
 			      </div>
@@ -233,6 +363,8 @@
 								</select>
 							</div>
 						</div>
+						
+						
 			      </div>
 			    </div>
 			  </div>

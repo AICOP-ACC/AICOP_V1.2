@@ -98,6 +98,26 @@ a:hover, a:visited, a:link, a:active {
 	padding: 20px;
 }
 
+.aicop-padding-10 {
+	padding: 10px;
+}
+
 .aicop-padding-bottom-20 {
 	padding-bottom: 20px;
+}
+
+.aicop-padding-left-10 {
+	padding: 10px;
+}
+
+.aicop-padding-top-10{
+	padding-top: 10px;
+}
+
+.aicop-padding-left-20 {
+	padding: 20px;
+}
+
+.icon-medium {
+	font-size: 30px;
 }
