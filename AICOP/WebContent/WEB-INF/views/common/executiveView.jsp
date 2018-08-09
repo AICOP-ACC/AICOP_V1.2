@@ -243,7 +243,7 @@
                       </div>
                       <div class="card-footer">
                         <div class="stats">
-                          <i class="material-icons">access_time</i> campaign sent 2 days ago
+                          <i class="material-icons">access_time</i> updated 2 hours ago
                         </div>
                       </div>
                     </div>
@@ -402,8 +402,8 @@
                         <div class="card-icon">
                           <i class="material-icons">store</i>
                         </div>
-                        <p class="card-category">Revenue</p>
-                        <h3 class="card-title">$34,245</h3>
+                        <p class="card-category">No of Invoices Generated</p>
+                        <h3 class="card-title">80,003</h3>
                       </div>
                       <div class="card-footer">
                         <div class="stats">
@@ -418,8 +418,8 @@
                         <div class="card-icon">
                           <i class="fa fa-twitter"></i>
                         </div>
-                        <p class="card-category">Followers</p>
-                        <h3 class="card-title">+245</h3>
+                        <p class="card-category">Last week Order activation</p>
+                        <h3 class="card-title">5,000</h3>
                       </div>
                       <div class="card-footer">
                         <div class="stats">
