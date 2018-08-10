@@ -101,7 +101,8 @@
           <h4 class="text-info aicop-padding-top-10">Major Incident : 1801040252
      	 </h4>
           <div>
-          <i id="confInit" class="fa fa-phone-square icon-green icon-large mouse-point icon-embossed"></i>
+         <i id="confInit" class="fa fa-phone-square icon-green icon-large mouse-point icon-embossed"></i> 
+         
 		 <i id="confTerminate" class="fa fa-phone-square icon-red icon-large mouse-point icon-embossed invisible aicop-padding-left-10"></i>
 		 <i id="shareBridge" class="fa fa-share-alt-square icon-blue icon-large mouse-point icon-embossed invisible aicop-padding-left-20" data-toggle="modal"></i>
 		 <button class="btn btn-info btn-round pull-right" data-toggle="modal" data-target="#myModal">
@@ -305,7 +306,7 @@
 		 		</div>
 		 		<div class="col-md-3"><input id="newPhNum" placeholder="Enter ph no..." class="form-control pull-left" type="number"> </div>
 		 		
-		 		<div class="col-md-1"><button id="addNewNumber" class="btn btn-primary btn-round">Add</button></div>
+		 		<div class="col-md-1"> <button id="addNewNumber" class="btn btn-primary btn-round">Add<!-- <i class="material-icons">person_add</i> --></button></div>
 		 	
 		 	<div class="col-md-3" id="errorMsg" class="form-group text-danger"></div>
 		 </div>
@@ -327,30 +328,41 @@
 			        </a>
 			      </h5>
 			    </div>
+			    
+			    
+			    
+			    
+			    
 			    <div id="collapseThree" class="collapse" role="tabpanel" aria-labelledby="headingThree" data-parent="#accordion">
-			      <div class="card-body col-md-12">
-			      		<label class="col-md-3">Business Impact</label>
+			    		      <div class="card-body">
+			        <div class="card">
+        
+       				 <div class="card-body">
+          
+         	      	<div class="row  aicop-padding-20">
+			      		<label class="col-md-3 pull-right">Business Impact</label>
 						<div class="col-md-7 aicop-padding-bottom-20">
 								<textarea rows="3" cols="75"></textarea>
 						</div> 
+					</div>
 						
-						<div class="form-group aicop-padding-20">
-							<label class="col-md-3">Impacted Application</label>
+						<div class="row  aicop-padding-20">
+							<label class="col-md-3 pull-right">Impacted Application</label>
 							<div class="col-md-7 col-sm-7 col-xs-12">
-								<input id="tags_1" type="text" class="tags form-control"
-									value="BUOS" data-tagsinput-init="true" style="display: none;">
+								<!-- <input id="tags_1" type="text" class="tags"
+									value="BUOS" data-tagsinput-init="true" style="display: none;"> -->
 								<div id="tags_1_tagsinput" class="tagsinput"
 									style="width: auto; min-height: auto; height: auto;">
-									<!-- Dynamic content -->
+									Dynamic content
 								</div>
 								<div id="suggestions-container"
 									style="position: relative; float: left; width: 250px; margin: 10px;"></div>
 							</div>
 						</div>
 						
-							<div class="form-group">
-
-							<div class="col-md-9 col-sm-9 col-xs-9 pull-right">
+							<div class="row">
+							<label class="col-md-3 pull-right"></label>
+							<div class="col-md-8 col-sm-8 col-xs-8 pull-right">
 								<select id="impactedAppl"
 									style="position: relative; float: left; width: 300px; margin: 10px;"
 									name="appl" multiple="multiple">
@@ -365,7 +377,7 @@
 						</div>
 						
 						
-			      </div>
+			      
 			    </div>
 			  </div>
 			<!-- </div> -->

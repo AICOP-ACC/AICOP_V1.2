@@ -142,22 +142,22 @@ $('#addNewNumber').on('click',function(){
 	})
 /**Soundariya : AutoConferencing End**/
 
-$('#impactedAppl').on('click',function(){
+/*$('#impactedAppl').on('click',function(){
 	console.log("On select");
 	var selOpt = $(this).text();
 	console.log("selected option::"+selOpt);
-})
+})*/
 $( "#impactedAppl" ).change(function () {
 	console.log("onchange");
     var str = ""; 
     var populateStr = "";
     $( "#impactedAppl option:selected" ).each(function() {
     	var eachOpt = $( this ).text()
-    	populateStr += "<span class='tag'><span>"+eachOpt+"&nbsp;&nbsp;</span><a href='#' title='Removing tag'>x</a></span>";
+    	populateStr += "<span class='tag'><span>"+eachOpt+";&nbsp;&nbsp;</span></span>";
       str += $( this ).text() + " ";
     });
    // $( "#divId" ).text( str );
-    populateStr += '<div id="tags_1_addTag"><input id="tags_1_tag" value="" data-default="add a tag" style="color: rgb(102, 102, 102); width: 72px;"></div><div class="tags_clear"></div>';
+   // populateStr += '<div id="tags_1_addTag"><input id="tags_1_tag" value="" data-default="add a tag" style="color: rgb(102, 102, 102); width: 72px;"></div><div class="tags_clear"></div>';
     $('#tags_1_tagsinput').html(populateStr);
   })
   .change();
